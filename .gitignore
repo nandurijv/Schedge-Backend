@@ -4,3 +4,6 @@ venv
 
 # ignoring .env file
 .env
+
+# miscellaneous
+.DS_Store
