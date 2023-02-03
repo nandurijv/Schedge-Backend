@@ -57,7 +57,7 @@ class user_model():
         else:
             if find_user[0]["verified"] == True:
                 try:
-                    encoded_user = jwt.encode({"user": user},os.getenv("SECRET_KEY"),algorithm="HS256")
+                    encoded_user = jwt.encode({"user": user["email"]},os.getenv("SECRET_KEY"),algorithm="HS256")
                     return {"success":True, "message":"User Logged In Successfully","token":encoded_user}
                 except Exception as err:
                     print(err)

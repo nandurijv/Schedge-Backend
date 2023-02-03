@@ -35,3 +35,7 @@ def welcome():
     return "Server is Running ..."
 
 from controllers import *
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    print("APP LISTENING ON PORT 5000")
