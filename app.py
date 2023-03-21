@@ -1,6 +1,8 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
+import certifi
 from mongoengine import connect
+from pymongo import MongoClient
 from flask_bcrypt import Bcrypt
 from flask_mail import Mail
 from flask_cors import CORS, cross_origin
@@ -27,7 +29,9 @@ flask_bcrypt = Bcrypt(app)
 mail = Mail(app)
 mail.init_app(app)
 
-connect('schedge')
+path_ssl = certifi.where()
+
+print("CONNECTED TO THE SERVER", (connect("schedge").server_info()['ok']))
 
 @app.route('/')
 @cross_origin()
