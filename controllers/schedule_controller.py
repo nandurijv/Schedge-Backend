@@ -13,9 +13,8 @@ class GetSchedule(Resource):
     def get(self):
         return obj.get_schedule()
 
-
 class PostSchedule(Resource):
-    # method_decorators = {"post":[auth.token_auth]}
+    method_decorators = {"post":[auth.token_auth]}
     def post(self):
         return obj.post_schedule()
 
