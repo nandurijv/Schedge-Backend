@@ -14,7 +14,7 @@ parser.add_argument('userID',type=str,help="Please provide userID")
 parser.add_argument('interval_start',type=str,help="Please provide tag name")
 parser.add_argument('interval_end',type=str,help="Please provide start_time")
 parser.add_argument('slot_dur',type=str,help="Please provide end_time")
-parser.add_argument('activities',location="json",help="Please provide activity list")
+parser.add_argument('activities',type=list,location="json",help="Please provide activity list")
 
 class GetSchedule(Resource):
     method_decorators = {"get":[auth.token_auth]}

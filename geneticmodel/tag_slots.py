@@ -1,19 +1,13 @@
 import json
 import math
-file = open('test.json')
-data = json.load(file)
-start = data["interval_start"]
-end = data["interval_end"]
+from schemas.tags_schema import TagSchema
 
-slot_dur = data["slot_dur"]
+def add_slots(data, data2):
+    
+    slot_dur = int(data["slot_dur"])
+    start = int(data["interval_start"])
 
-file2 = open("tags.json")
-data2 = json.load(file2)
-
-def add_slots():
-    tags = data2["tags"]
-    for i in tags:
-        i["slots"] = [math.ceil(i/slot_dur) for i in range(i['start_time']-start, i['end_time']-start,slot_dur)]
+    tags = data2
+    for i in range(len(tags)):
+        tags[i]["slots"] = [math.ceil(j/slot_dur) for j in range(int(tags[i]['start_time'])-start, int(tags[i]['end_time'])-start,slot_dur)]
     return tags
-
-slots = add_slots()

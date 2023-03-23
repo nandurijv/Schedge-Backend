@@ -1,10 +1,11 @@
 import random
 
-def roulette_wheel_selection(population, fitness_fn, num_parents):
+def roulette_wheel_selection(population, fitness_fn, num_parents,data,userID):
     # Calculate fitness scores for each individual in the population
     fitness_scores = []
+    print("INPUTS: ", data,userID)
     for i in range(len(population)):
-        temp = fitness_fn(population[i])
+        temp = fitness_fn(population[i],data,userID)
         fitness_scores.append(temp)
     # Calculate the sum of all fitness scores
     total_fitness = sum(fitness_scores)

@@ -1,4 +1,4 @@
-from flip import biased_coin_flip as flip
+from geneticmodel.flip import biased_coin_flip as flip
 from geneticmodel.mutation import mutation
 import random
 
