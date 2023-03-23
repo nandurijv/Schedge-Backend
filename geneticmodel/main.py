@@ -50,5 +50,4 @@ def generation(data):
         avg_fitness.append(stats[0])
         max_fit.append(stats[1])
         gen_list.append(curr_gen)
-    return population
-
+    return {"pop":sorted(population,key=lambda x: fitness(x,data2,data2["userID"])),"avg":avg_fitness,"max":max_fit}

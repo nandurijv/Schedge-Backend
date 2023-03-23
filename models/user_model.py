@@ -51,14 +51,16 @@ class user_model():
             return {"success":True, "message":"Verification Successful!"}
 
     def login_user(self, user):
-        find_user = UserSchema.objects(email=user["email"])
+        find_user = UserSchema.objects(email=user["email"])[0]
         if len(find_user) == 0:
             return {"success":False, "message":"No Such User Exists"}
         else:
-            if find_user[0]["verified"] == True:
+            if find_user["verified"] == True:
+                userID = str(find_user["id"])
+                print(userID)
                 try:
                     encoded_user = jwt.encode({"user": user["email"]},os.getenv("SECRET_KEY"),algorithm="HS256")
-                    return {"success":True, "message":"User Logged In Successfully","token":encoded_user}
+                    return {"success":True, "message":"User Logged In Successfully","token":encoded_user, "userID":userID, "name": find_user["name"], "email": find_user["email"]}
                 except Exception as err:
                     print(err)
                     return {"success":False, "message":"Internal Error Occurred"},500

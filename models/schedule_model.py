@@ -19,7 +19,7 @@ class schedule_model():
             print("hi")
             print(schedule)
             data = generation(schedule)
-            return make_response({"success":True, "data": schedule},200)
+            return make_response({"success":True, "data": data},200)
         except Exception as e:
             print(e)
 
