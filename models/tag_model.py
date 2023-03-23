@@ -12,4 +12,13 @@ class tag_model():
             tags = json.loads(TagSchema.objects(name=tag["name"])[0].to_json())
             return make_response({"success":True, "data": tags},200)
         except Exception as e:
-            return make_response({"success":False, "data": e},400)     
+            print(e)
+            return make_response({"success":False, "data": "Duplicate Tags Not Allowed"},400)
+    def update_tag(self, tag):
+        try:
+            TagSchema.objects(name=tag["name"]).update(start_time=tag["start_time"],end_time=tag["end_time"])
+            tags = json.loads(TagSchema.objects(name=tag["name"])[0].to_json())
+            return make_response({"success":True, "data": tags},200)
+        except Exception as e:
+            print(e)
+            return make_response({"success":False, "data": "Duplicate Tags Not Allowed"},400)     

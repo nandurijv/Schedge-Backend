@@ -21,4 +21,11 @@ class createTags(Resource):
         tag = parser.parse_args()
         return obj.create_tags(tag)
 
+class updateTags(Resource):
+    method_decorators = {"get":[auth.token_auth]}
+    def put(self):
+        tag = parser.parse_args()
+        return obj.update_tag(tag)
+    
 api.add_resource(createTags,'/user/createTag', )
+api.add_resource(updateTags,'/user/putTag', )

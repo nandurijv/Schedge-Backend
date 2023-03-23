@@ -18,7 +18,7 @@ class auth_model():
                 try:
                     key = str(os.getenv("SECRET_KEY"))
                     user = jwt.decode(token, key, algorithms = "HS256")
-                    request.headers.add_header("user",user)
+                    request.headers.add("user",user)
                     return func(*args)
                 except Exception as e:
                     print(e)
