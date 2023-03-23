@@ -14,6 +14,3 @@ class schedule_model():
     def post_schedule(self):
         # return make_response({"success":True, "data": "Accessed post schedule endpoint"},200)
         return self.process_schedule()
-    
-    def process_schedule(self):
-        return pre_process_obj.pre_process({"schedule": "schedule_name"})

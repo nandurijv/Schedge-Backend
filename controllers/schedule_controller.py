@@ -18,10 +18,6 @@ class PostSchedule(Resource):
     def post(self):
         return obj.post_schedule()
 
-class ProcessSchedule(Resource):
-    def post(self):
-        return obj.process_schedule()
 
 api.add_resource(GetSchedule,'/user/getSchedule', )
 api.add_resource(PostSchedule,'/user/postSchedule',)
-api.add_resource(ProcessSchedule,'/user/processSchedule',)

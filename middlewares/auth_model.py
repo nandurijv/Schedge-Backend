@@ -14,12 +14,14 @@ class auth_model():
         def decorated_func(*args):
             token = request.headers.get('Authorization')
             if re.match("^Bearer *([^ ]+) *$",token,flags=0):
-                token = token.split(' ')[1]
+                token = str(token.split(' ')[1])
                 try:
-                    user = jwt.decode(token,os.getenv(''), algorithms = "HS256")
-                    request.headers.set('user',user)
+                    key = str(os.getenv("SECRET_KEY"))
+                    user = jwt.decode(token, key, algorithms = "HS256")
+                    request.headers.add_header("user",user)
                     return func(*args)
                 except Exception as e:
+                    print(e)
                     return make_response({"success":False,"message":"Invalid Token"},400)
             else:
                 return make_response({"success":False,"message":"Invalid Token"},400)
