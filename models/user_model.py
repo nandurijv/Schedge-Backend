@@ -59,8 +59,8 @@ class user_model():
                 userID = str(find_user["id"])
                 print(userID)
                 try:
-                    encoded_user = jwt.encode({"user": user["email"]},os.getenv("SECRET_KEY"),algorithm="HS256")
-                    return {"success":True, "message":"User Logged In Successfully","token":encoded_user, "userID":userID, "name": find_user["name"], "email": find_user["email"]}
+                    encoded_user = jwt.encode({"user": str(find_user["email"])},os.getenv("SECRET_KEY"),algorithm="HS256")
+                    return {"success":True, "message":"User Logged In Successfully","token":encoded_user, "userID":userID}
                 except Exception as err:
                     print(err)
                     return {"success":False, "message":"Internal Error Occurred"},500

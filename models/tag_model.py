@@ -22,3 +22,11 @@ class tag_model():
         except Exception as e:
             print(e)
             return make_response({"success":False, "data": "Duplicate Tags Not Allowed"},400)     
+    def get_tags(self, userID):
+        try:
+            tags = TagSchema.objects(userID=userID).to_json()
+            return make_response({"success":True, "data": json.loads(tags)},200)
+        except Exception as e:
+            print(e)
+            return make_response({"success":False, "data": "Duplicate Tags Not Allowed"},400) 
+        

@@ -12,7 +12,7 @@ class auth_model():
     def token_auth(self,func):
         @wraps(func)
         def decorated_func(*args):
-            token = request.headers.get('Authorization')
+            token = str(request.headers.get('Authorization'))
             if re.match("^Bearer *([^ ]+) *$",token,flags=0):
                 token = str(token.split(' ')[1])
                 try:
