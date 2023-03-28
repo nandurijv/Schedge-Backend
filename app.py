@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
-import certifi
 from mongoengine import connect
 from pymongo import MongoClient
 from flask_bcrypt import Bcrypt
@@ -28,8 +27,6 @@ app.config.update(dict(
 flask_bcrypt = Bcrypt(app)
 mail = Mail(app)
 mail.init_app(app)
-
-path_ssl = certifi.where()
 
 print("CONNECTED TO THE SERVER", (connect("schedge").server_info()['ok']))
 
