@@ -9,7 +9,7 @@ import math
 def generation(data):
     #define constants
     pop_size = 100
-    num_gen = 10
+    num_gen = 100
     num_parents = 2
     n_mutation = 0 #number of mutations
     p_mutation = 0.001 #probability of mutation
@@ -32,22 +32,19 @@ def generation(data):
         data2 = data.copy()
         curr_gen += 1
         #select individuals for mating
-        print("Current Generation", curr_gen)
         parents = roulette_wheel_selection(population, fitness, num_parents,data2,data2["userID"])
         #perform crossover
-        print("PARENTS: ", parents)
         children = crossover(population[parents[0]],population[parents[1]],lchrom,n_mutation,p_mutation,p_cross,n_cross)
         
-        print("CHILDREN:",children)
         #update the population
         
         population.append(children[0])
         population.append(children[1])
-        print("HEHEHE" , data2, data2["userID"])
         
         # add to the fitness of the population
         stats = average_fitness(population,data2,data2["userID"])
         avg_fitness.append(stats[0])
         max_fit.append(stats[1])
         gen_list.append(curr_gen)
-    return {"pop":sorted(population,key=lambda x: fitness(x,data2,data2["userID"])),"avg":avg_fitness,"max":max_fit}
+        print("CURRENT GENERATION:", curr_gen)
+    return {"pop":sorted(population,key=lambda x: fitness(x,data2,data2["userID"]))[::-1],"avg":avg_fitness,"max":max_fit}

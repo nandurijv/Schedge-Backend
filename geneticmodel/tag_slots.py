@@ -11,6 +11,4 @@ def add_slots(data, data2):
     
     for i in range(len(tags)):
         tags[i]["slots"] = [math.ceil(j/slot_dur) for j in range(int(tags[i]['start_time'])-start, int(tags[i]['end_time'])-start,slot_dur)]
-    print("tags are: ",data2)
-    print()
     return tags

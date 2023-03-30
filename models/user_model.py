@@ -19,7 +19,7 @@ class user_model():
         try:
             mail.send(msg)
         except Exception as err:
-            return {"success":False, "message":"Internal Error Occurred"}
+            return {"success":False, "message":err.message}
         return {"success":True, "message":"Verification Mail Sent!"}
 
     def create_user(self, userModel):
