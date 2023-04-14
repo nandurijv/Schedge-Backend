@@ -6,10 +6,19 @@ def roulette_wheel_selection(population, fitness_fn, num_parents,data,userID):
     for i in range(len(population)):
         temp = fitness_fn(population[i],data,userID)
         fitness_scores.append(temp)
+    print("FITNESS OF EACH INDIVIDUAL: ")
+    for i in fitness_scores:
+        print(i)
+
     # Calculate the sum of all fitness scores
     total_fitness = sum(fitness_scores)
+    print("TOTAL FITNESS:", total_fitness)
+
     # Calculate the relative fitness for each individual
     relative_fitness = [fitness_score / total_fitness if total_fitness!=0 else 0.5 for fitness_score in fitness_scores]
+    print("RELATIVE FITNESS OF EACH INDIVIDUAL:")
+    for i in relative_fitness:
+        print(i)
 
     # Select the top 'num_parents' individuals using roulette wheel selection
     parents = []
@@ -22,4 +31,5 @@ def roulette_wheel_selection(population, fitness_fn, num_parents,data,userID):
             if spin > r:
                 parents.append(j)
                 break
+    print("SELECTED PARENTS ARE: ", parents)
     return parents

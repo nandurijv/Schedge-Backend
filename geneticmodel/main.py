@@ -8,9 +8,9 @@ import math
 
 def generation(data):
     #define constants
-    pop_size = 100
-    num_gen = 5
-    num_parents = 1
+    pop_size = 10
+    num_gen = 1
+    num_parents = 2
     n_mutation = 0 #number of mutations
     p_mutation = 0.001 #probability of mutation
     p_cross = 1 #that is every parent must cross
@@ -27,7 +27,9 @@ def generation(data):
     max_fit = []
     gen_list= []
     # initialise a population
+    print("ACTIVITIES: ",list_of_activities)
     population = initialise(pop_size, lchrom, len_act)
+
     while curr_gen!=num_gen:
         data2 = data.copy()
         curr_gen += 1

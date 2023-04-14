@@ -16,6 +16,7 @@ def initialise(pop_size,lchrom, lact):
             tchromosome[i] = value if value!=-1 else -1
             if tchromosome[i]!=-1:
                 temp_indices.remove(tchromosome[i])
+
         #append this individual to the population
         population.append(tchromosome)
         #incrment the population limit
