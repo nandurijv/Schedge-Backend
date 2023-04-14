@@ -9,8 +9,8 @@ import math
 def generation(data):
     #define constants
     pop_size = 100
-    num_gen = 100
-    num_parents = 2
+    num_gen = 5
+    num_parents = 1
     n_mutation = 0 #number of mutations
     p_mutation = 0.001 #probability of mutation
     p_cross = 1 #that is every parent must cross

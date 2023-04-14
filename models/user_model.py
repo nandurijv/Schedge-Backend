@@ -1,4 +1,3 @@
-from flask import jsonify
 from schemas.user_schema import UserSchema
 from app import flask_bcrypt, mail
 import jwt
@@ -19,7 +18,8 @@ class user_model():
         try:
             mail.send(msg)
         except Exception as err:
-            return {"success":False, "message":err.message}
+            print(err)
+            return {"success":False, "message":"Error Sending Mail"}
         return {"success":True, "message":"Verification Mail Sent!"}
 
     def create_user(self, userModel):
@@ -51,19 +51,21 @@ class user_model():
             return {"success":True, "message":"Verification Successful!"}
 
     def login_user(self, user):
-        find_user = UserSchema.objects(email=user["email"])[0]
-        if len(find_user) == 0:
-            return {"success":False, "message":"No Such User Exists"}
-        else:
-            if find_user["verified"] == True:
-                userID = str(find_user["id"])
-                print(userID)
-                try:
-                    encoded_user = jwt.encode({"user": str(find_user["email"])},os.getenv("SECRET_KEY"),algorithm="HS256")
-                    return {"success":True, "message":"User Logged In Successfully","token":encoded_user, "userID":userID}
-                except Exception as err:
-                    print(err)
-                    return {"success":False, "message":"Internal Error Occurred"},500
+        try:
+            find_user = UserSchema.objects(email=user["email"])[0]
+            if len(find_user) == 0:
+                return {"success":False, "message":"No Such User Exists"}
             else:
-                return {"success":False, "message":"User Not Verified"}
-        return jsonify(user)
+                if find_user["verified"] == True:
+                    userID = str(find_user["id"])
+                    print(userID)
+                    try:
+                        encoded_user = jwt.encode({"user": str(find_user["email"])},os.getenv("SECRET_KEY"),algorithm="HS256")
+                        return {"success":True, "message":"User Logged In Successfully","token":encoded_user, "userID":userID}
+                    except Exception as err:
+                        print(err)
+                        return {"success":False, "message":"Internal Error Occurred"},500
+                else:
+                    return {"success":False, "message":"User Not Verified"}
+        except Exception as e:
+            return {"success":False, "message":"User Not Found"}

@@ -1,0 +1,4 @@
+SENDER_MAIL = <mail>
+MAIL_PASSWORD = <pswd>
+SECRET_KEY = <key>
+BASE_URL = <url>

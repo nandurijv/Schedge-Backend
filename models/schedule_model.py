@@ -16,10 +16,10 @@ class schedule_model():
     
     def post_schedule(self, schedule):
         try:
-            print("hi")
             print(schedule)
             data = generation(schedule)
             return make_response({"success":True, "data": data},200)
         except Exception as e:
             print(e)
+            return make_response({"success":"false","message":"Error Generating Schedule"},400)
 
