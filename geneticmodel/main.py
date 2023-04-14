@@ -8,8 +8,8 @@ import math
 
 def generation(data):
     #define constants
-    pop_size = 10
-    num_gen = 1
+    pop_size = 120
+    num_gen = 10
     num_parents = 2
     n_mutation = 0 #number of mutations
     p_mutation = 0.001 #probability of mutation
@@ -49,8 +49,8 @@ def generation(data):
         population.append(children[1])
         
         # add to the fitness of the population
-        stats = average_fitness(population,data2,data2["userID"])
-        avg_fitness.append(stats[0])
-        max_fit.append(stats[1])
-        gen_list.append(curr_gen)
+        # stats = average_fitness(population,data2,data2["userID"])
+        # avg_fitness.append(stats[0])
+        # max_fit.append(stats[1])
+        # gen_list.append(curr_gen)
     return {"pop":sorted(population,key=lambda x: fitness(x,data2,data2["userID"]))[::-1],"avg":avg_fitness,"max":max_fit}

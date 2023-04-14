@@ -8,7 +8,7 @@ def decode(chromosome, data,userID):
             chromosome[i]=0
         else:
             #get the activity object from the list
-            print("CALCULATING FOR ACTIVITY ",chromosome[i], "at slot" , i)
+            # print("CALCULATING FOR ACTIVITY ",chromosome[i], "at slot" , i)
             a = data["activities"][chromosome[i]]
             #now give this activity a fitness value based on its position at slot i
             chromosome[i] = activity_fitness(a,i,data,userID)
