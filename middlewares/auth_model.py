@@ -1,6 +1,5 @@
 from flask import jsonify, request, make_response
 from functools import wraps
-from schemas.user_schema import UserSchema
 import jwt
 from dotenv import load_dotenv
 import os
@@ -18,6 +17,7 @@ class auth_model():
                 try:
                     key = str(os.getenv("SECRET_KEY"))
                     user = jwt.decode(token, key, algorithms = "HS256")
+                    request.user= {"id":user['user']}
                     return func(*args)
                 except Exception as e:
                     print(e)

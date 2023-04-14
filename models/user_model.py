@@ -2,6 +2,7 @@ from schemas.user_schema import UserSchema
 from app import flask_bcrypt, mail
 import jwt
 from flask_mail import Message
+from flask import request
 from dotenv import load_dotenv
 import os
 
@@ -60,7 +61,7 @@ class user_model():
                     userID = str(find_user["id"])
                     print(userID)
                     try:
-                        encoded_user = jwt.encode({"user": str(find_user["email"])},os.getenv("SECRET_KEY"),algorithm="HS256")
+                        encoded_user = jwt.encode({"user": str(find_user["id"])},os.getenv("SECRET_KEY"),algorithm="HS256")
                         return {"success":True, "message":"User Logged In Successfully","token":encoded_user, "userID":userID}
                     except Exception as err:
                         print(err)

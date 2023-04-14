@@ -31,13 +31,18 @@ def generation(data):
     while curr_gen!=num_gen:
         data2 = data.copy()
         curr_gen += 1
+        #printing current generation number
+        print("CURRENT GENERATION:", curr_gen)
         #select individuals for mating
+        print("SELECTING PARENTS...")
         parents = roulette_wheel_selection(population, fitness, num_parents,data2,data2["userID"])
         #perform crossover
+        print("GENERATING CHILDREN...")
         children = crossover(population[parents[0]],population[parents[1]],lchrom,n_mutation,p_mutation,p_cross,n_cross)
         
         #update the population
         
+        print("ADDING CHILDREN TO CURRENT POPULATION...")
         population.append(children[0])
         population.append(children[1])
         
@@ -46,5 +51,4 @@ def generation(data):
         avg_fitness.append(stats[0])
         max_fit.append(stats[1])
         gen_list.append(curr_gen)
-        print("CURRENT GENERATION:", curr_gen)
     return {"pop":sorted(population,key=lambda x: fitness(x,data2,data2["userID"]))[::-1],"avg":avg_fitness,"max":max_fit}

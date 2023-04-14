@@ -1,16 +1,12 @@
-from app import app, api
+from app import api
 from models.tag_model import tag_model
 from middlewares.auth_model import auth_model
-from flask_restful import Resource, Api, reqparse
-from flask import make_response,request
-from app import app
-import os
-import jwt
+from flask_restful import Resource, reqparse
+
 obj = tag_model()
 auth = auth_model()
 
 parser = reqparse.RequestParser()
-parser.add_argument('userID',type=str,help="Please provide userID")
 parser.add_argument('name',type=str,help="Please provide tag name")
 parser.add_argument('start_time',type=str,help="Please provide start_time")
 parser.add_argument('end_time',type=str,help="Please provide end_time")
@@ -30,8 +26,7 @@ class updateTags(Resource):
 class getTags(Resource):
     method_decorators = {"get":[auth.token_auth]}
     def get(self):
-        userID = request.args.get('userID')
-        return obj.get_tags(userID)
+        return obj.get_tags()
 
 
 api.add_resource(createTags,'/user/createTag', )

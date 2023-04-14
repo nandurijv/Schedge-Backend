@@ -1,12 +1,6 @@
 from flask import jsonify, make_response, request
-from schemas.schedule_schema import ScheduleSchema
-from middlewares.pre_process import pre_process
 from dotenv import load_dotenv
 from geneticmodel.main import generation
-import os
-import json
-
-pre_process_obj = pre_process()
 load_dotenv()
 
 class schedule_model():
