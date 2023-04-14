@@ -10,7 +10,6 @@ obj = schedule_model()
 auth = auth_model()
 
 parser = reqparse.RequestParser()
-parser.add_argument('userID',type=str,help="Please provide userID")
 parser.add_argument('interval_start',type=str,help="Please provide tag name")
 parser.add_argument('interval_end',type=str,help="Please provide start_time")
 parser.add_argument('slot_dur',type=str,help="Please provide end_time")

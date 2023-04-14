@@ -9,6 +9,7 @@ class schedule_model():
         return make_response({"success":True, "data": "Accessed get schedule endpoint"},200)
     
     def post_schedule(self, schedule):
+        schedule["userID"] = request.user["id"]
         try:
             print(schedule)
             data = generation(schedule)
