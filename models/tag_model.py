@@ -6,7 +6,10 @@ import json
 
 load_dotenv()
 class tag_model():
+    
     def create_tags(self, tag):
+        tag["userID"] = request.user["id"]
+        print(tag["userID"])
         try:
             TagSchema(userID=tag["userID"],name=tag["name"],start_time=tag["start_time"],end_time=tag["end_time"]).save()
             tags = json.loads(TagSchema.objects(name=tag["name"])[0].to_json())
@@ -15,6 +18,7 @@ class tag_model():
             print(e)
             return make_response({"success":False, "data": "Duplicate Tags Not Allowed"},400)
     def update_tag(self, tag):
+        tag["userID"] = request.user["id"]
         try:
             TagSchema.objects(name=tag["name"]).update(start_time=tag["start_time"],end_time=tag["end_time"])
             tags = json.loads(TagSchema.objects(name=tag["name"])[0].to_json())
