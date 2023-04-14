@@ -28,11 +28,10 @@ class user_model():
         if len(user) != 0:
             return {"success":False, "message":"User Already Exists"}
         else:
-
-            UserSchema(name=userModel["name"],email=userModel["email"],password=flask_bcrypt.generate_password_hash(userModel["password"], 12)).save()
             res = self.mail_user(userModel)
             message= ""
             if res["success"]:
+                UserSchema(name=userModel["name"],email=userModel["email"],password=flask_bcrypt.generate_password_hash(userModel["password"], 12)).save()
                 message = "Created User Successfully. Verify Your Email."
             else:
                 message = res["message"]

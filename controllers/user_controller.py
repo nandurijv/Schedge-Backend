@@ -1,6 +1,6 @@
 from app import app, api
 from models.user_model import user_model
-from flask_restful import Resource, Api, reqparse
+from flask_restful import Resource, Api, reqparse, request
 obj = user_model()
 
 parser = reqparse.RequestParser()
