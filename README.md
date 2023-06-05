@@ -1,3 +1,23 @@
 # Schedge-Backend
-A Flask API for integrating Python Backend to Schedge Application.
+
+## Description
+
+## Technologies Used
+
+## Features
+
+## Getting Started
+
+## Usage
+
+## API Documentation
+
+## Contribution Guidelines
+
+## License
+
+## Contact Information
+
+## Acknowledgments
+
 
