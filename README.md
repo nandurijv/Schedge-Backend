@@ -164,8 +164,8 @@ Welcome to the project! This guide will help you get started with setting up and
 
 Before you begin, make sure you have the following prerequisites installed on your machine:
 
-- [MongoDB Database (local or Atlas)](link1)
-- [Python3.9 or Greater](link2)
+- [MongoDB Database (local or Atlas)](https://www.mongodb.com)
+- [Python3.9 or Greater](https://www.python.org)
 
 ### Installation
 
