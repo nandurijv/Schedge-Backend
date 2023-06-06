@@ -151,11 +151,12 @@ Follow these steps to install and set up the project:
 This API is a use case of implementing Genetic Algorithm for time table scheduling. The basic application for this api is to enable user authentication, verification and creation of a schedule based on certain info provided by the user. The sample flow of the api calls is as follows:
 
 - User Signs Up
-- User logs In
+- User Verifies his mail
+- User Logs In
 - User Creates Tags of his choice
-- User Submits a list of Activities
+- User Submits a list of Activities to schedule in a given time frame
 - User Gets a Schedule Generated from the list of activities using the Genetic Model
-- user can view his created Tags
+- User can view his created Tags
 - User can view his saved Schedules
 
 ## API Documentation
