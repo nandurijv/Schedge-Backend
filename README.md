@@ -160,7 +160,7 @@ Follow these steps to install and set up the project:
 
 ## API Documentation
 
-
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/16204257-fffb24a6-8c3f-4afa-8894-a1f409e0a356?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D16204257-fffb24a6-8c3f-4afa-8894-a1f409e0a356%26entityType%3Dcollection%26workspaceId%3D19094d3d-9fed-480c-8707-d66423cbd0f4)
 
 ## Contribution Guidelines
 
