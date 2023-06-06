@@ -148,17 +148,19 @@ Follow these steps to install and set up the project:
 
 ## Usage
 
-1. API Endpoints: List and describe the available endpoints of your API. For each endpoint, provide information about the HTTP method (GET, POST, etc.), the URL path, and the purpose of the endpoint.
+This API is a use case of implementing Genetic Algorithm for time table scheduling. The basic application for this api is to enable user authentication, verification and creation of a schedule based on certain info provided by the user. The sample flow of the api calls is as follows:
 
-2. Request Format: Explain the expected format of the API requests. Specify the required headers, parameters, and request body (if applicable). You can provide example requests in cURL or JSON format.
-
-3. Response Format: Describe the format of the API responses. Include information about the HTTP status codes that can be returned and the structure of the response body. Provide examples of response payloads if possible.
-
-4. Authentication and Authorization: If your API requires authentication or authorization, explain the authentication mechanisms used (e.g., JWT, OAuth) and how to include authentication credentials in the requests.
-
-5. Error Handling: Explain how errors and exceptions are handled in your API. Describe the error response format and provide examples of common error scenarios.
+- User Signs Up
+- User logs In
+- User Creates Tags of his choice
+- User Submits a list of Activities
+- User Gets a Schedule Generated from the list of activities using the Genetic Model
+- user can view his created Tags
+- User can view his saved Schedules
 
 ## API Documentation
+
+**Fork the collection here** :
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/16204257-fffb24a6-8c3f-4afa-8894-a1f409e0a356?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D16204257-fffb24a6-8c3f-4afa-8894-a1f409e0a356%26entityType%3Dcollection%26workspaceId%3D19094d3d-9fed-480c-8707-d66423cbd0f4)
 
