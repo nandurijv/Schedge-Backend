@@ -221,7 +221,6 @@ For any questions, feedback, or inquiries, please feel free to reach out
 - **GitHub**: [<i class="fa-brands fa-github fa-spin-pulse"></i> <span class="github">nandurijv</span>](https://github.com/nandurijv)
 - **LinkedIn**: [<i class="fa-brands fa-linkedin"></i> <span class="linkedin">Jayant Vishnu Nanduri</span>](https://www.linkedin.com/in/nandurijv)
 
-
 ## Acknowledgments
 
 [![Button Text](https://img.shields.io/badge/Button%20Text-Click%20Me-brightgreen)](https://example.com)
