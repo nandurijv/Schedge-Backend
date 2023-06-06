@@ -1,6 +1,5 @@
 <html>
 <head>
-<script src="https://kit.fontawesome.com/736afdd3dc.js" crossorigin="anonymous"></script>
 <style>
 a{
     text-decoration:none;
