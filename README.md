@@ -99,11 +99,11 @@ This tech stack utilizes Flask as the main framework, along with various Flask e
 
 3. Models
 
-    Each route ( public or private ) when reached either through **GET, POST, PUT or DELETE** methods calls different functions that need to be run. These functions (according to the schema on which they are called) are defined in this directory.
+    Each route ( public or private ) when reached either through **GET, POST, PUT or DELETE** methods, calls different functions that need to be run. For example, CRUD operations on User, Tags or the Schedules. These functions are defined in this directory for each schema.
 
 5. Environment Variables
 
-    The project makes use of some environment variables which control parameters like ***sender's mail, db host, mail password, port number, production environment, etc.***
+    The project makes use of some environment variables which control parameters like ***sender's mail, db host, mail password, port number, production environment, etc.*** A sample env file has been included in the root directory.
 
 6. Genetic Model
 
