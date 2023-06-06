@@ -227,9 +227,6 @@ For any questions, feedback, or inquiries, please feel free to reach out
 
 [<img class="img" src="https://github.com/nandurijv.png" alt="Your Name" width="50" height="50">](https://github.com/nandurijv)
 
-
-
-
 </body>
 
 </html>
