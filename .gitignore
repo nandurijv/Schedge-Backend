@@ -7,3 +7,4 @@ venv
 
 # miscellaneous
 .DS_Store
+.vscode
