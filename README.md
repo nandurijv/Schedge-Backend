@@ -1,54 +1,6 @@
 <html>
 <head>
-<script src="https://kit.fontawesome.com/736afdd3dc.js" crossorigin="anonymous"></script>
-<style>
-a{
-    text-decoration:none;
-    outline:none;
-    color:white;
-    transition:0.3s all ease;
-}
-a:hover{
-    text-decoration:none;
-    color:white;
-}
-h2{
-    color:teal;
-}
-h3{
-    color:mediumseagreen;
-}
-p{
-    color:#DDE6ED;
-}
-b{
-    color:dodgertblue;
-}
-.name{
-    color:lightgreen;
-}
-.mail{
-    color:hotpink;
-}
-.linkedin{
-    color:white;
-}
-.github{
-    color:white;
-}
-.link{
-    border-radius:1rem;
-    padding:0.8rem;
-    background-color:#66347F;
-}
-.link:hover{
-    background:#40128B;
-}
-.img{
-    border-radius:50%;
-    border:1px solid;
-}
-</style>
+
 </head>
 
 <body>
